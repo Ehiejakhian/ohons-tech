@@ -1,0 +1,40 @@
+@use '../util/' as *;
+
+.choose {
+  padding: 50px var(--side-p);
+  @include df(normal, center, row wrap, 25px);
+  >* {
+    flex: 1;
+  }
+  &__content {
+    flex: 2;
+    @include df(normal, start, column, 20px);
+    ul {
+      list-style: none;
+      padding-left: 10px;
+      @include df(normal, start, column);
+      li {
+        padding: 0 0 20px 25px;
+        position: relative;
+        @include df(normal, start, column, 10px);
+        &:not(:last-of-type) {
+          border-left: 1px solid;
+        }
+        &::before {
+          content: '✓';
+          border: 1px solid;
+          width: 25px;
+          height: 25px;
+          font-weight: 700;
+          background: var(--text);
+          color: var(--bg);
+          border-radius: 50%;
+          position: absolute;
+          transform: translateX(-50%);
+          left: 0;
+          @include df(center, center);
+        }
+      }
+    }
+  }
+}

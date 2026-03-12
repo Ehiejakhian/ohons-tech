@@ -1,0 +1,34 @@
+
+@use './fonts' as *;
+@use './vars' as *;
+@use './mixins' as *;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'overpass';
+  font-size: var(--font);
+  background: var(--bg);
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h1, h2 {
+  font-family: 'manrope';
+  .focus {
+    color: var(--special-link);
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}

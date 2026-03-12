@@ -1,0 +1,24 @@
+@use '../util/' as *;
+
+.services {
+  --red: green;
+  padding: 20px var(--side-p);
+  &__content {
+    text-align: center;
+    @include df(center, center, column, 20px);
+    .grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      >* {
+        min-height: 200px;
+        padding: 20px;
+        background: #fff;
+        text-align: center;
+        @include df(center, center, column, 10px);
+      }
+    }
+  }
+}
+

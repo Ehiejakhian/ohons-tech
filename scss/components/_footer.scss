@@ -1,0 +1,55 @@
+@use '../util/' as *;
+
+footer {
+  padding-top: 50px;
+  background: var(--text);
+  color: var(--bg);
+  @include df(center, center, column, 20px);
+  .content {
+    padding: 20px var(--side-padding) 50px var(--side-p);
+    @include df(center, center, column, 20px);
+    &__group {
+      @include df(center, center, column, 10px);
+      ul {
+        list-style: none;
+        @include df(center, center,  column, 15px);
+        li {
+          a {
+            text-decoration: none;
+            color: var(--medium);
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .social-icons {
+      ul {
+        list-style: none;
+        @include df(center, center, row wrap, 20px);
+        a {
+          text-decoration: none;
+          width: 40px;
+          height: 40px;
+          border: 1px solid;
+          border-radius: 50%;
+          color: inherit;
+          padding: 10px;
+          font-size: 1.5rem;
+          @include df(center, center);
+        }
+      }
+    }
+  }
+  .copyright {
+    width: 100%;
+    border-top: 1px solid var(--medium);
+    padding: 20px var(--side-p);
+    @include df(center, center, column, 5px);
+    .attribution {
+      font-size: 14px;
+      a {
+        color: var(--special-link);
+      }
+    }
+  }
+}

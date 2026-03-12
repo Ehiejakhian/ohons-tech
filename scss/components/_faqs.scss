@@ -1,0 +1,61 @@
+@use '../util/' as *;
+
+.faqs {
+  padding: 20px var(--side-p);
+  min-height: 50dvh;
+  @include df(center, center, column, 20px);
+  &__questions {
+    width: 100%;
+    max-width: 600px;
+    @include df(normal, normal, column, 5px);
+    details {
+      width: 100%;
+      transition: all .5s;
+      @include df(normal, normal, column, 5px);
+      a {
+        display: inline-block;
+        color: #037d92;
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px solid;
+      }
+      summary {
+        border: 1px solid var(--medium);
+        padding: 10px;
+        outline: none;
+        font-weight: 700;
+        background: rgba(#fff,.2);
+        @include df(space-between, center, row, 10px);
+        &::marker {
+          display: none;
+        }
+        &::after {
+          content: url('../../assets/images/chevron/down.svg');
+          line-height: 1;
+          width: 30px;
+          height: 30px;
+          border: 1px solid;
+          transition: all .3s;
+          @include df(center, center);
+        }
+      }
+      p {
+        padding: 10px;
+        opacity: 0;
+        color: var(--text);
+        background: var(--bg);
+        transition: all .3s;
+      }
+      &[open] {
+        summary {
+          &::after {
+            content: url('../../assets/images/chevron/up.svg');
+          }
+        }
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

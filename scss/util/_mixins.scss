@@ -1,0 +1,63 @@
+
+@mixin df($j:normal, $a:normal, $fl:row, $g:0) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-flow: $fl;
+  gap: $g;
+}
+
+@mixin btn($c:var(--text), $bg:transparent, $hover_c:var(--medium),$hover_bg:var(--text)) {
+  color: $c;
+  background: $bg;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all .3s;
+  @include df(center, center, row, 10px);
+  &:hover {
+    color: $hover_c;
+    background: $hover_bg;
+    border-color: $hover_bg;
+  }
+  span {
+    @include df(center, center, row);
+  }
+}
+
+@mixin h2 {
+  font-size: clamp(2rem, 5dvw, 3.5rem);
+  color: var(--text);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: .5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@mixin dg($numCols:1, $min-width:250px, $max-width:1fr, $gap:0) {
+  display: grid;
+  grid-template-columns: repeat($numCols, minmax($min-width, $max-width));
+  gap: $gap;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counterRotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}

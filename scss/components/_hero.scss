@@ -1,0 +1,35 @@
+
+@use '../util/' as *;
+
+.hero {
+  border: 1px solid;
+  position: relative;
+  &__img {
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      height: 60dvh;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    background: rgba(#fff,.7);
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: var(--side-p);
+    left: var(--side-p);
+    padding: 20px var(--side-p);
+    margin-top: 200px;
+    transform: translateY(20%);
+    @include df(normal, start, column, 20px);
+    .links {
+      @include df(normal, center, row wrap, 20px);
+      a {
+        @include btn;
+      }
+    }
+  }
+}
