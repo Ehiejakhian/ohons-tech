@@ -9,7 +9,7 @@
 }
 :root {
   --side-p: clamp(20px, 5dvw, 10%);
-  --bg: beige;
+  --bg: #fffcee;
   --text: #121212;
   --font: 16px;
   --medium: #c9bebe;
@@ -57,11 +57,11 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 5dvw, 3rem);
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5dvw, 2.5rem);
 }
 
 h1, h2 {
@@ -95,7 +95,7 @@ header .logo {
   font-weight: 700;
   text-transform: uppercase;
 }
-header #checkbox, header .overlay {
+header #checkbox {
   display: none;
 }
 header .overlay {
@@ -105,23 +105,26 @@ header .overlay {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4);
+  transform: translateY(100%);
+  transition: all 0.5s;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 }
-header label.hamburger {
+header .hamburger {
   width: 35px;
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
+  transition: all 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
   gap: 5px;
 }
-header label.hamburger:hover {
+header .hamburger:hover {
   background: rgba(204, 204, 204, 0.2);
 }
-header label.hamburger span {
+header .hamburger span {
   width: 25px;
   height: 3px;
   background: var(--text);
@@ -208,15 +211,17 @@ header nav button span {
   flex-flow: row;
   gap: 0;
 }
+header #checkbox:checked ~ .hamburger {
+  opacity: 0;
+}
 header #checkbox:checked ~ nav {
   transform: translateY(0);
 }
-header #checkbox:checked .overlay {
-  display: block;
+header #checkbox:checked ~ .overlay {
+  transform: translateY(0);
 }
 
 .hero {
-  border: 1px solid;
   position: relative;
 }
 .hero__img {
@@ -230,7 +235,7 @@ header #checkbox:checked .overlay {
   object-fit: cover;
 }
 .hero__content {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -243,18 +248,31 @@ header #checkbox:checked .overlay {
   justify-content: normal;
   align-items: start;
   flex-flow: column;
-  gap: 20px;
+  gap: 15px;
+}
+@media (max-width: 500px) {
+  .hero__content {
+    right: 0;
+    left: 0;
+    background: #fff;
+  }
+}
+.hero__content .logo h1 {
+  text-transform: uppercase;
+}
+.hero__content .logo h2 {
+  font-size: 1.2rem;
 }
 .hero__content .links {
   display: flex;
   justify-content: normal;
-  align-items: center;
+  align-items: normal;
   flex-flow: row wrap;
-  gap: 20px;
+  gap: 10px;
 }
 .hero__content .links a {
-  color: var(--text);
-  background: transparent;
+  color: var(--bg);
+  background: var(--text);
   padding: 10px 20px;
   font: inherit;
   font-size: 15px;
@@ -268,9 +286,9 @@ header #checkbox:checked .overlay {
   gap: 10px;
 }
 .hero__content .links a:hover {
-  color: var(--medium);
-  background: var(--text);
-  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--bg);
 }
 .hero__content .links a span {
   display: flex;
@@ -278,6 +296,12 @@ header #checkbox:checked .overlay {
   align-items: center;
   flex-flow: row;
   gap: 0;
+}
+.hero__content .links a {
+  border-radius: 50px;
+}
+.hero__content .links a:hover {
+  border: 1px solid var(--text);
 }
 
 .about {
@@ -364,7 +388,7 @@ header #checkbox:checked .overlay {
 .services__content .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
 }
 .services__content .grid > * {
@@ -372,11 +396,17 @@ header #checkbox:checked .overlay {
   padding: 20px;
   background: #fff;
   text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
   gap: 10px;
+}
+.services__content .grid > *:hover {
+  border: 2px solid var(--special-link);
+  transform: scale(1.05);
 }
 
 .home-gallery {
@@ -553,12 +583,10 @@ header #checkbox:checked .overlay {
 .faqs__questions details summary::marker {
   display: none;
 }
-.faqs__questions details summary::after {
-  content: url("../../assets/images/chevron/down.svg");
+.faqs__questions details summary svg {
   line-height: 1;
-  width: 30px;
-  height: 30px;
-  border: 1px solid;
+  width: 1.5rem;
+  height: 1.5rem;
   transition: all 0.3s;
   display: flex;
   justify-content: center;
@@ -573,11 +601,69 @@ header #checkbox:checked .overlay {
   background: var(--bg);
   transition: all 0.3s;
 }
-.faqs__questions details[open] summary::after {
-  content: url("../../assets/images/chevron/up.svg");
+.faqs__questions details[open] summary svg {
+  transform: rotate(180deg);
 }
 .faqs__questions details[open] p {
   opacity: 1;
+}
+
+.cta {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  padding: 20px var(--side-p);
+  background: rgba(18, 18, 18, 0.8);
+  color: var(--bg);
+}
+@media (min-width: 500px) {
+  .cta {
+    margin: 0 auto -30px auto;
+  }
+}
+.cta__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 20px;
+}
+.cta__content .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.cta__content .btns a {
+  color: var(--bg);
+  background: var(--text);
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.cta__content .btns a:hover {
+  color: var(--medium);
+  background: var(--text);
+  border-color: var(--text);
+}
+.cta__content .btns a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+.cta__content .btns a:hover {
+  border-color: var(--medium);
 }
 
 footer {
@@ -589,6 +675,16 @@ footer {
   align-items: center;
   flex-flow: column;
   gap: 20px;
+}
+footer .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 5px;
+}
+footer .logo span {
+  color: var(--medium);
 }
 footer .content {
   padding: 20px var(--side-padding) 50px var(--side-p);
@@ -643,7 +739,7 @@ footer .content .social-icons ul a {
 }
 footer .copyright {
   width: 100%;
-  border-top: 1px solid var(--medium);
+  border-top: 1px solid #363636;
   padding: 20px var(--side-p);
   display: flex;
   justify-content: center;

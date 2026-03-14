@@ -29,12 +29,10 @@
         &::marker {
           display: none;
         }
-        &::after {
-          content: url('../../assets/images/chevron/down.svg');
+        svg {
           line-height: 1;
-          width: 30px;
-          height: 30px;
-          border: 1px solid;
+          width: 1.5rem;
+          height: 1.5rem;
           transition: all .3s;
           @include df(center, center);
         }
@@ -48,8 +46,8 @@
       }
       &[open] {
         summary {
-          &::after {
-            content: url('../../assets/images/chevron/up.svg');
+          svg {
+            transform: rotate(180deg);
           }
         }
         p {

@@ -9,16 +9,21 @@
     .grid {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
       >* {
         min-height: 200px;
         padding: 20px;
         background: #fff;
         text-align: center;
+        border: 2px solid transparent;
+        transition: all .3s;
         @include df(center, center, column, 10px);
+        &:hover {
+          border: 2px solid var(--special-link);
+          transform: scale(1.05);
+        }
       }
     }
   }
 }
-

@@ -2,7 +2,6 @@
 @use '../util/' as *;
 
 .hero {
-  border: 1px solid;
   position: relative;
   &__img {
     width: 100%;
@@ -15,7 +14,7 @@
     }
   }
   &__content {
-    background: rgba(#fff,.7);
+    background: rgba(#fff,.8);
     position: absolute;
     z-index: 1;
     bottom: 0;
@@ -24,11 +23,30 @@
     padding: 20px var(--side-p);
     margin-top: 200px;
     transform: translateY(20%);
-    @include df(normal, start, column, 20px);
+    @include df(normal, start, column, 15px);
+    @media (max-width: $mini-tab) {
+      right: 0;
+      left: 0;
+      background: #fff;
+    }
+    .logo {
+      h1 {
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
     .links {
-      @include df(normal, center, row wrap, 20px);
+      @include df(normal, normal, row wrap, 10px);
       a {
-        @include btn;
+        @include btn(var(--bg), var(--text), var(--text), var(--bg));
+        & {
+          border-radius: 50px;
+        }
+        &:hover {
+          border: 1px solid var(--text);
+        }
       }
     }
   }

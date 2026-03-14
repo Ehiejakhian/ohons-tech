@@ -5,6 +5,12 @@ footer {
   background: var(--text);
   color: var(--bg);
   @include df(center, center, column, 20px);
+  .logo {
+    @include df(center, center, column, 5px);
+    span {
+      color: var(--medium);
+    }
+  }
   .content {
     padding: 20px var(--side-padding) 50px var(--side-p);
     @include df(center, center, column, 20px);
@@ -42,7 +48,7 @@ footer {
   }
   .copyright {
     width: 100%;
-    border-top: 1px solid var(--medium);
+    border-top: 1px solid #363636;
     padding: 20px var(--side-p);
     @include df(center, center, column, 5px);
     .attribution {

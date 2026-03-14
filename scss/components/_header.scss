@@ -16,7 +16,7 @@ header {
     text-transform: uppercase;
   }
 
-  #checkbox,.overlay {
+  #checkbox {
     display: none;
   }
   .overlay {
@@ -26,14 +26,17 @@ header {
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(#000,.4);
+    transform: translateY(100%);
+    transition: all .5s;
+    background: linear-gradient(transparent, rgba(#000,.5));
   }
 
-  label.hamburger {
+  .hamburger {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     cursor: pointer;
+    transition: all .5s;
     @include df(center, center, column, 5px);
     &:hover {
       background: rgba(#ccc,.2);
@@ -95,11 +98,14 @@ header {
   }
 
   #checkbox:checked {
+    ~ .hamburger {
+      opacity: 0;
+    }
     ~ nav {
       transform: translateY(0);
     }
-    .overlay {
-      display: block;
+    ~ .overlay {
+      transform: translateY(0);
     }
   }
 }

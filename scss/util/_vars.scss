@@ -1,8 +1,12 @@
 
+$mini-tab: 500px;
+$tab: 700px;
+$desktop: 1100px;
+
 :root {
   --side-p: clamp(20px, 5dvw, 10%);
 
-  --bg: beige;
+  --bg: #fffcee;
   --text: #121212;
   --font: 16px;
   --medium: #c9bebe;

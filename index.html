@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="loader">
+  
 </div>
 <header>
   <span class="logo">
@@ -17,7 +18,7 @@
   </span>
 
   <input type="checkbox" id="checkbox"/>
-  <label for="checkbox" class="overlay">ov</label>
+  <label for="checkbox" class="overlay"></label>
   <label for="checkbox" class="hamburger">
     <span></span>
     <span></span>
@@ -37,7 +38,7 @@
     </ul>
 
     <button class="theme">
-      <i class="fa-brands fa-sun"></i>
+      <i class="fa fa-adjust"></i>
     </button>
   </nav>
 </header>
@@ -46,22 +47,24 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__img">
-      <img src="./assets/images/csc_hero.png" alt="hero-bg"/>
+      <img src="./assets/images/csc_nig.jpg" alt="hero-bg" class="mobile"/>
     </div>
     <div class="hero__content">
       <div class="logo">
         <h1>Ohons Tech</h1>
-        <h2>Aluminum Fabrications</h2>
+        <h2>Aluminum  and Glass Fabrications</h2>
       </div>
       <p>Quality Aluminum Windows and Doors fabrications</p>
       <div class="links">
         <a href="#">
           <i class="fa fa-phone"></i>
-          <span>Call Now</span>
         </a>
         <a href="#">
           <i class="fa fa-whatsapp"></i>
-          <span>Whatsapp Us</span>
+        </a>
+        <a href="#">
+          <i class="fa fa-map-marker"></i>
+          <span>Find Us</span>
         </a>
       </div>
     </div>
@@ -160,19 +163,34 @@
     <h2>Frequently Asked <span class="focus">Questions</span></h2>
     <div class="faqs__questions">
       <details name="details">
-        <summary>Did you rate yourself?</summary>
+        <summary>
+          How much does a window cost?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
         <p>
-          For some of my skills, I used the progress value I had on the site I learn from. <a href="www.w3schools.org">W3schools</a> for example has a progress tracking system and I used that in some of the values. For the others, I just assumed.
+          Depends on the type. You eed not worry about cost that much. We offer decent prices for all of our products. However, to see a estimated and frequently updated lists of prices check <a href="www.w3schools.org">here.</a>
         </p>
       </details>
       <details name="details">
-        <summary>Did you start coding?</summary>
+        <summary>
+          When are you available?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
         <p>
-          While attending classes for my National diploma in computer engineering, I was introduced a bit to HTML. I just got home, searched the stuff up on youtube and here I am. I was also inctroduced to Visual Basic using the .NET framework, and to C++ for writing Arduino code.
+          Our working hours are from <b>8AM to 6PM</b>. You can meet us at work from Monday to Saturday.
         </p>
       </details>
       <details name="details">
-        <summary>About your hobbies?</summary>
+        <summary>
+          About your hobbies?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
         <p>
           I love sketching, drawing comics and animation. I draw a lot or at least, I used to. I love to sing too. I love reading about discoveries and new science concepts. I can say Coding is a hobby of mine too. I also love watching movies (maybe too much).
           <br>Over all, I love telling others about God's purpose of a wonderful earth free from sufferning and pain. The bible may be old, but as one of Jehovah's witnesses, I believe it's a manual for life. See more about this gist at <a href="www.jw.org">JW.org</a>
@@ -180,12 +198,23 @@
       </details>
     </div>
   </section>
+
+  <section class="cta">
+    <div class="cta__content">
+      <h3>So, what's next?</h3>
+      <div class="btns">
+        <a href="#">Make an order</a>
+        <a href="#">Find Us</a>
+        <a href="#">Call Us</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="logo">
     <h2>Ohons Tech</h2>
-    <span>Aluminum and Glass Fabrication</span>
+    <span>"No job is too small"</span>
   </div>
 
   <div class="content">
