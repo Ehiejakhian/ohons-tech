@@ -52,7 +52,7 @@
 }
 
 body {
-  font-family: "overpass";
+  font-family: "overpass", arial;
   font-size: var(--font);
   background: var(--bg);
 }
