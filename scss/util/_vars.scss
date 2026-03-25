@@ -11,8 +11,13 @@ $desktop: 1100px;
   --text: #121212;
   --font: 16px;
   --medium: #c9bebe;
-  --dark: #0a021a;
+  --dark: #000000;
 
   --btn-c: #14440fee;
   --special-link: teal;
+
+  // For texts on white bg
+  --text-on-bg: var(--text);
+  --white: #fff;
+  --light-white: #ffffffbb;
 }

@@ -12,6 +12,7 @@ body {
   font-family: 'overpass', arial;
   font-size: var(--font);
   background: var(--bg);
+  color: var(--text);
 }
 main {
   @include df(normal, normal, column);

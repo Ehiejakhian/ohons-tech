@@ -32,8 +32,8 @@ header {
     right: 0;
     left: 0;
     transform: translateY(100%);
-    transition: all .5s;
-    background: linear-gradient(transparent, rgba(#000,.5));
+    transition: all .75s;
+    background: rgba(#000,.5);
   }
 
   .hamburger {
@@ -93,7 +93,11 @@ header {
       li {
         a {
           color: inherit;
+          transition: all .3s;
           text-decoration: none;
+          &:hover {
+            color: var(--special-link);
+          }
         }
       }
     }

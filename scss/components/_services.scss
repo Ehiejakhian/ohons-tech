@@ -1,7 +1,6 @@
 @use '../util/' as *;
 
 .services {
-  --red: green;
   padding: 20px var(--side-p);
   &__content {
     text-align: center;
@@ -14,9 +13,10 @@
       >* {
         min-height: 200px;
         padding: 20px;
-        background: #fff;
+        background: var(--white);
         text-align: center;
         border: 2px solid transparent;
+        color: var(--text-on-bg);
         transition: all .3s;
         @include df(center, center, column, 10px);
         img {
@@ -30,7 +30,7 @@
       }
       .more {
         text-decoration: none;
-        color: var(--text);
+        color: var(--text-on-bg);
         font-weight: 700;
         border: 2px solid var(--medium);
         &:hover {

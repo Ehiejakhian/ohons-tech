@@ -2,8 +2,13 @@
 
 .choose {
   padding: 50px var(--side-p);
-  @include df(center, center, row wrap, 25px);
-  >* {
+  .wrapper {
+    @include df(center, center, column, 25px);
+    @media (min-width: $mini-tab) {
+      @include df(center, center, row wrap, 25px);
+    }
+  }
+  &__img {
     flex: 1;
   }
   &__content {

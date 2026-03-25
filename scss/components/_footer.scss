@@ -2,8 +2,8 @@
 
 footer {
   padding-top: 50px;
-  background: var(--text);
-  color: var(--bg);
+  background: var(--text-on-bg);
+  color: var(--white);
   @include df(center, center, column, 20px);
   .logo {
     @include df(center, center, column, 5px);
@@ -24,6 +24,10 @@ footer {
             text-decoration: none;
             color: var(--medium);
             font-weight: 300;
+            transition: all .3s;
+            &:hover {
+              color: var(--special-link);
+            }
           }
         }
       }
@@ -41,7 +45,11 @@ footer {
           color: inherit;
           padding: 10px;
           font-size: 1.5rem;
+          transition: all .3s;
           @include df(center, center);
+          &:hover {
+            color: var(--special-link);
+          }
         }
       }
     }

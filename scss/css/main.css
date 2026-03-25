@@ -14,9 +14,12 @@
   --text: #121212;
   --font: 16px;
   --medium: #c9bebe;
-  --dark: #0a021a;
+  --dark: #000000;
   --btn-c: #14440fee;
   --special-link: teal;
+  --text-on-bg: var(--text);
+  --white: #fff;
+  --light-white: #ffffffbb;
 }
 
 @keyframes appear {
@@ -55,6 +58,7 @@ body {
   font-family: "overpass", arial;
   font-size: var(--font);
   background: var(--bg);
+  color: var(--text);
 }
 
 main {
@@ -246,8 +250,8 @@ header .overlay {
   right: 0;
   left: 0;
   transform: translateY(100%);
-  transition: all 0.5s;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  transition: all 0.75s;
+  background: rgba(0, 0, 0, 0.5);
 }
 header .hamburger {
   width: 35px;
@@ -322,7 +326,11 @@ header nav ul {
 }
 header nav ul li a {
   color: inherit;
+  transition: all 0.3s;
   text-decoration: none;
+}
+header nav ul li a:hover {
+  color: var(--special-link);
 }
 header nav button {
   color: var(--bg);
@@ -464,11 +472,12 @@ header #checkbox:checked ~ .overlay {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  right: var(--side-p);
-  left: var(--side-p);
+  margin-right: var(--side-p);
+  margin-left: var(--side-p);
   padding: 20px var(--side-p);
   margin-top: 200px;
   transform: translateY(20%);
+  color: var(--text-on-bg);
   display: flex;
   justify-content: normal;
   align-items: start;
@@ -479,7 +488,9 @@ header #checkbox:checked ~ .overlay {
   .hero__content {
     right: 0;
     left: 0;
-    background: #fff;
+    background: var(--white);
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 .hero__content .logo h1 {
@@ -595,11 +606,10 @@ header #checkbox:checked ~ .overlay {
   left: 0;
   border: 2px solid var(--dark);
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--light-white);
 }
 
 .services {
-  --red: green;
   padding: 20px var(--side-p);
 }
 .services__content {
@@ -619,9 +629,10 @@ header #checkbox:checked ~ .overlay {
 .services__content .grid > * {
   min-height: 200px;
   padding: 20px;
-  background: #fff;
+  background: var(--white);
   text-align: center;
   border: 2px solid transparent;
+  color: var(--text-on-bg);
   transition: all 0.3s;
   display: flex;
   justify-content: center;
@@ -639,7 +650,7 @@ header #checkbox:checked ~ .overlay {
 }
 .services__content .grid .more {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-on-bg);
   font-weight: 700;
   border: 2px solid var(--medium);
 }
@@ -720,13 +731,24 @@ header #checkbox:checked ~ .overlay {
 
 .choose {
   padding: 50px var(--side-p);
+}
+.choose .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: column;
   gap: 25px;
 }
-.choose > * {
+@media (min-width: 500px) {
+  .choose .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 25px;
+  }
+}
+.choose__img {
   flex: 1;
 }
 .choose__content {
@@ -856,7 +878,7 @@ header #checkbox:checked ~ .overlay {
   z-index: 2;
   max-width: 500px;
   padding: 20px var(--side-p);
-  background: rgba(18, 18, 18, 0.8);
+  background: #383030;
   color: var(--bg);
 }
 @media (min-width: 500px) {
@@ -865,6 +887,7 @@ header #checkbox:checked ~ .overlay {
   }
 }
 .cta__content {
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -894,9 +917,9 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .cta__content .btns a:hover {
-  color: var(--medium);
-  background: var(--text);
-  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--bg);
 }
 .cta__content .btns a span {
   display: flex;
@@ -905,14 +928,11 @@ header #checkbox:checked ~ .overlay {
   flex-flow: row;
   gap: 0;
 }
-.cta__content .btns a:hover {
-  border-color: var(--medium);
-}
 
 footer {
   padding-top: 50px;
-  background: var(--text);
-  color: var(--bg);
+  background: var(--text-on-bg);
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -956,6 +976,10 @@ footer .content__group ul li a {
   text-decoration: none;
   color: var(--medium);
   font-weight: 300;
+  transition: all 0.3s;
+}
+footer .content__group ul li a:hover {
+  color: var(--special-link);
 }
 footer .content .social-icons ul {
   list-style: none;
@@ -974,11 +998,15 @@ footer .content .social-icons ul a {
   color: inherit;
   padding: 10px;
   font-size: 1.5rem;
+  transition: all 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
+}
+footer .content .social-icons ul a:hover {
+  color: var(--special-link);
 }
 footer .copyright {
   width: 100%;

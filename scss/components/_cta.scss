@@ -5,20 +5,18 @@
   z-index: 2;
   max-width: $mini-tab;
   padding: 20px var(--side-p);
-  background: rgba(#121212,.8);
+  background: #383030;
   color: var(--bg);
   @media (min-width: $mini-tab) {
     margin: 0 auto -30px auto;
   }
   &__content {
+    color: var(--white);
     @include df(center, center, column, 20px);
     .btns {
       @include df(center, center, row wrap, 10px);
       a {
-        @include btn(var(--bg), var(--text));
-        &:hover {
-          border-color: var(--medium);
-        }
+        @include btn(var(--bg), var(--text), var(--text), var(--bg));
       }
     }
   }

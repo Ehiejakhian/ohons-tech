@@ -48,7 +48,7 @@
         <li><a href="#">Contact Us</a></li>
       </ul>
   
-      <button class="theme" title="Toggle theme">
+      <button class="theme" title="Toggle theme" id="theme-btn">
         <i class="fa fa-adjust"></i>
       </button>
     </nav>
@@ -143,30 +143,35 @@
 
   <!-- CHOOSE -->
   <section class="choose">
-    <div class="choose__content">
-      <h2>Why <span class="focus">choose</span> ohons tech?</h2>
-      <ul>
-        <li>
-          <h3>Experienced fabricators</h3>
-          <p>Skilled professionals with years of experience in aluminum fabrication.</p>
-        </li>
-        <li>
-          <h3>Quality Materials</h3>
-          <p>use of durable aluminum and reliable hardware for long lasting results</p>
-        </li>
-        <li>
-          <h3>Custom  Window solutions</h3>
-          <p>Made-to-order windows and doors tailored specifically for your space.</p>
-        </li>
-        <li>
-          <h3>Affordable pricing</h3>
-          <p>Competitive rates with exceptional value for money</p>
-        </li>
-        <li>
-          <h3>Fast Installation</h3>
-          <p>Efficient and timely installation to fit your schedule</p>
-        </li>
-      </ul>
+    <div class="wrapper">
+      <div class="choose__content">
+        <h2>Why <span class="focus">choose</span> ohons tech?</h2>
+        <ul>
+          <li>
+            <h3>Experienced fabricators</h3>
+            <p>Skilled professionals with years of experience in aluminum fabrication.</p>
+          </li>
+          <li>
+            <h3>Quality Materials</h3>
+            <p>use of durable aluminum and reliable hardware for long lasting results</p>
+          </li>
+          <li>
+            <h3>Custom  Window solutions</h3>
+            <p>Made-to-order windows and doors tailored specifically for your space.</p>
+          </li>
+          <li>
+            <h3>Affordable pricing</h3>
+            <p>Competitive rates with exceptional value for money</p>
+          </li>
+          <li>
+            <h3>Fast Installation</h3>
+            <p>Efficient and timely installation to fit your schedule</p>
+          </li>
+        </ul>
+      </div>
+      <div class="choose__img">
+        <img src="./assets/images/fr_abroad.jpg" alt="">
+      </div>
     </div>
   </section>
 
@@ -198,14 +203,13 @@
       </details>
       <details name="details">
         <summary>
-          About your hobbies?
+          Who and where do you deliver to?
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
           </svg>
         </summary>
         <p>
-          I love sketching, drawing comics and animation. I draw a lot or at least, I used to. I love to sing too. I love reading about discoveries and new science concepts. I can say Coding is a hobby of mine too. I also love watching movies (maybe too much).
-          <br>Over all, I love telling others about God's purpose of a wonderful earth free from sufferning and pain. The bible may be old, but as one of Jehovah's witnesses, I believe it's a manual for life. See more about this gist at <a href="www.jw.org">JW.org</a>
+          Anyone and anywhere within Nigeria.
         </p>
       </details>
     </div>
@@ -272,6 +276,7 @@
 
 <script type="module" src="./scripts/loader.js"></script>
 <script type="module" src="./scripts/fetch.js"></script>
+<script src="./scripts/theme.js"></script>
 
 </body>
 </html>
