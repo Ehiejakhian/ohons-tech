@@ -498,6 +498,8 @@ header #checkbox:checked ~ .overlay {
 }
 .hero__content .logo h2 {
   font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 .hero__content .links {
   display: flex;

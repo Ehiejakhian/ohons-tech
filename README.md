@@ -1,2 +1,2 @@
 # Welcome
-This id the official OHONS TECH website.
+This is the official OHONS TECH website.
