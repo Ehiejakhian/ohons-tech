@@ -7,6 +7,10 @@
   font-family: "manrope";
   src: url("../../assets/fonts/manrope.ttf");
 }
+@font-face {
+  font-family: "space-grotesk";
+  src: url("../../assets/fonts/space-grotesk.ttf");
+}
 :root {
   --side-p: clamp(20px, 5dvw, 10%);
   --max-w: 1200px;
@@ -729,6 +733,130 @@ header #checkbox:checked ~ .overlay {
   align-items: center;
   flex-flow: row;
   gap: 0;
+}
+
+.gallery-hero {
+  width: 100%;
+  height: 60dvh;
+  background: var(--text);
+  color: var(--bg);
+}
+.gallery-hero .wrapper {
+  padding: 0 var(--side-p);
+}
+.gallery-hero__content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+.gallery-hero__content h1 {
+  font-size: clamp(2.5rem, 5dvw, 3rem);
+}
+.gallery-hero__content h2 {
+  font-size: clamp(1.5rem, 5dvw, 2rem);
+}
+.gallery-hero__content a {
+  color: var(--bg);
+  background: var(--text);
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.gallery-hero__content a:hover {
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--bg);
+}
+.gallery-hero__content a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-flow: column;
+  gap: 0;
+}
+.gallery .wrapper {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-flow: column;
+  gap: 20px;
+  padding: 50px var(--side-p);
+}
+.gallery__tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 20px;
+}
+.gallery__tools button {
+  color: var(--text);
+  background: transparent;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.gallery__tools button:hover {
+  color: var(--medium);
+  background: var(--text);
+  border-color: var(--text);
+}
+.gallery__tools button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+.gallery__img {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.gallery__img figure {
+  flex: 1;
+  border: 5px solid;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+.gallery__img figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+.gallery__img figure img:hover {
+  transform: scale(1.2);
 }
 
 .choose {

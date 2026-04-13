@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ohons Tech | Gallery</title>
+  <link rel="stylesheet" href="../scss/css/main.css"/>
+</head>
+<body>
+<div class="loader active">
+  <div class="loader__content">
+    <div class="window">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="word">
+      <span class="letter">O</span><span class="letter">h</span><span class="letter">o</span><span class="letter">n</span><span class="letter">s</span>
+    </div>
+    <div class="word">
+      <span class="letter">t</span><span class="letter">e</span><span class="letter">c</span><span class="letter">h</span>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="content">
+    <span class="logo">
+      <span>Ohons Tech</span>
+    </span>
+  
+    <input type="checkbox" id="checkbox"/>
+    <label for="checkbox" class="overlay"></label>
+    <label for="checkbox" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  
+    <nav>
+      <label for="checkbox">
+        <span></span>
+        <span></span>
+      </label>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="../gallery/">Gallery</a></li>
+        <li><a href="../contact/">Contact Us</a></li>
+      </ul>
+  
+      <button class="theme" title="Toggle theme" id="theme-btn">
+        <i class="fa fa-adjust"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="gallery-hero">
+    <div class="wrapper">
+      <div class="gallery-hero__content">
+        <h1>Our Work</h1>
+        <h3>Quality Aluminum Fabrication</h3>
+        <p>Take a look at some of our completed aluminum window and door projects. We take pride in our craftsmanship and attention to detail.</p>
+        <a href="#gallery"><i class="fa fa-chevron-down"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" >
+    <div class="wrapper">
+      <div class="gallery__tools">
+        Filter by:
+        <button class="active">All</button>
+        <button>Windows</button>
+        <button>Doors</button>
+        <button>Office Partitions</button>
+        <button>Roofing</button>
+      </div>
+      <div class="gallery__img">
+        <figure>
+          <img src="../assets/images/csc_nig.jpg" alt="casement-window"/>
+        </figure>
+        <figure>
+          <img src="../assets/images/fr_grey.webp" alt="casement-window"/>
+        </figure>
+        <figure>
+          <img src="../assets/images/sli_black.jpg" alt="casement-window"/>
+        </figure>
+        <figure>
+          <img src="../assets/images/csc_nig.jpg" alt="casement-window"/>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section id="faqs" class="faqs">
+    <h2>Frequently Asked <span class="focus">Questions</span></h2>
+    <div class="faqs__questions">
+      <details name="details">
+        <summary>
+          How much does a window cost?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Depends on the type. You eed not worry about cost that much. We offer decent prices for all of our products. However, to see a estimated and frequently updated lists of prices check <a href="www.w3schools.org">here.</a>
+        </p>
+      </details>
+      <details name="details">
+        <summary>
+          When are you available?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Our working hours are from <b>8AM to 6PM</b>. You can meet us at work from Monday to Saturday.
+        </p>
+      </details>
+      <details name="details">
+        <summary>
+          Who and where do you deliver to?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Anyone and anywhere within Nigeria.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__content">
+      <h3>So, what's next?</h3>
+      <div class="btns">
+        <a href="#">Make an order</a>
+        <a href="#">Find Us</a>
+        <a href="#">Call Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    <h2>Ohons Tech</h2>
+    <span>"No job is too small"</span>
+  </div>
+
+  <div class="content">
+    <div class="content__group">
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="social-icons">
+      <ul>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-envelope-o"></i></a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    &copy;2026 - Ohons tech
+    <div class="attribution">
+      Coded by <a href="https://ehiejakhian.github.io/">Ehi Ejakhian</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="../scripts/loader.js"></script>
+<script src="../scripts/theme.js"></script>
+
+</body>
+</html>

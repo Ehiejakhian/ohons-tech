@@ -34,3 +34,60 @@
     @include btn;
   }
 }
+
+.gallery-hero {
+  width: 100%;
+  height: 60dvh;
+  background: var(--text);
+  color: var(--bg);
+  .wrapper {
+    padding: 0 var(--side-p);
+  }
+  &__content {
+    text-align: center;
+    @include df(center, center, column, 10px);
+    h1 {
+      font-size: clamp(2.5rem, 5dvw, 3rem);
+    }
+    h2 {
+      font-size: clamp(1.5rem, 5dvw, 2rem);
+    }
+    a {
+      @include btn(var(--bg), var(--text), var(--text), var(--bg));
+    }
+  }
+}
+
+.gallery {
+  @include df(normal, normal, column);
+  .wrapper {
+    @include df(normal, normal, column, 20px);
+    padding: 50px var(--side-p);
+  }
+  &__tools {
+    @include df(center, center, row, 20px);
+    button {
+      @include btn;
+    }
+  }
+  &__img {
+    @include df(normal, normal, row wrap, 20px);
+    figure {
+      flex: 1;
+      border: 5px solid ;
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all .5s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
