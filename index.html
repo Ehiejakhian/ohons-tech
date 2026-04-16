@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/logos/favicon.ico" type="image/x-icon"/>
+  <title>Ohons Tech | Aluminum, Glass & Roofing services</title>
+  <link rel="stylesheet" href="./scss/css/main.css"/>
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css"/>
+</head>
+<body>
+<div class="loader active">
+  <div class="loader__content">
+    <div class="window">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="word">
+      <span class="letter">O</span><span class="letter">h</span><span class="letter">o</span><span class="letter">n</span><span class="letter">s</span>
+    </div>
+    <div class="word">
+      <span class="letter">t</span><span class="letter">e</span><span class="letter">c</span><span class="letter">h</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<section class="contact">
+  <input type="checkbox" name="contact-ch" id="contact-ch"/>
+  <div class="contact-stuff">
+    <span class="overlay" id="contact-btn"></span>
+    <form>
+      <h2><span class="focus">Contact</span> Us</h2>
+      <p>Feel free to contact us via any of the provided channels below.</p>
+      <div class="btns">
+        <button><i class="fa fa-phone"></i></button>
+        <button><i class="fa fa-whatsapp"></i></button>
+        <button><i class="fa fa-envelope"></i></button>
+      </div>
+      <div class="fields">
+        <div class="field name">
+          <div class="input">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" value="John Doe" placeholder="Type here ...">
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <div class="field msg">
+          <div class="input">
+            <label for="msg">Your Message</label>
+            <textarea name="msg" id="msg" placeholder="Type here ..."></textarea>
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <button class="chat">Chat</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<header>
+  <div class="content">
+    <span class="logo">
+      <span>Ohons Tech</span>
+      <span>Aluminum • Glass • Roofing</span>
+    </span>
+  
+    <input type="checkbox" id="checkbox"/>
+    <label for="checkbox" class="overlay"></label>
+    <label for="checkbox" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  
+    <nav>
+      <label for="checkbox">
+        <span></span>
+        <span></span>
+      </label>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="./gallery/">Gallery</a></li>
+        <li><button id="contact-btn">Contact Us</button></li>
+      </ul>
+  
+      <button class="theme" title="Toggle theme" id="theme-btn">
+        <i class="fa fa-adjust"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__img">
+      <img src="./assets/images/csc_nig.jpg" alt="hero-bg" class="mobile"/>
+      <img src="./assets/images/our_work/bench-cutter.jpg" alt="cutting aluminum stiles"/>
+      <img src="./assets/images/our_work/drilling-an-angled-edge.jpg" alt="">
+      <img src="./assets/images/our_work/ohons-tech.jpg" alt="">
+    </div>
+    <div class="hero__content">
+      <div class="logo">
+        <!-- <img src="./assets/svgs/logo.svg" alt="Ohons Tech Logo" class="hero__content__logo"> -->
+        <h1>Ohons Tech</h1>
+        <h2>Aluminum &amp; Glass works • Roofing Services</h2>
+      </div>
+      <p>Quality Aluminum Windows and Doors fabrications</p>
+      <div class="links">
+        <a href="tel:2348038839073">
+          <i class="fa fa-phone"></i>
+        </a>
+        <a href="https://wa.me/+23408038839073/" target="_blank">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+        <a href="./find-us/">
+          <i class="fa fa-map-marker"></i>
+          <span>Find Us</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about__content">
+      <h2><span class="focus">About</span> Ohons Tech</h2>
+      <p>At ohons tech, we specialize in window and door fabrication for homes, offices and commercial spaces. With years of experience, we craft high quality sliding windows, casement windows, glass and aluminum doors and office partitions tailored to our client's needs.</p>
+      <button id="contact-btn">Contact Us</button>
+    </div>
+  </section>
+  
+  <section class="home-services">
+    <div class="home-services__heading">
+      <h2>Our <span class="focus">Services</span></h2>
+    </div>
+    <div class="home-services__img">
+      <figure>
+        <img src="./assets/images/our_work/completed_building.jpeg" alt="sliding-window"/>
+        <figcaption>
+          <h3>Roofing Services</h3>
+          <p>Professional roofing solutions for residential and commercial properties.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/sli.jpg" alt="sliding-window"/>
+        <figcaption>
+          <h3>Sliding Windows</h3>
+          <p>Modern sliding window solutions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/our_work/4mm-glass-rack.jpg" alt="sliding-window"/>
+        <figcaption>
+          <h3>Glass Cutting and Sales</h3>
+          <p>Get quality glass of any size and width at decent prices.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/csc_nig.jpg" alt="casement-window"/>
+        <figcaption>
+          <h3>Casement Windows</h3>
+          <p>Classic casement window solutions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/fr_grey.webp" alt="Frameless windows"/>
+        <figcaption>
+          <h3>Frameless Windows</h3>
+          <p>Contemporary frameless window solutions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure class="long">
+        <img src="./assets/images/our_work/toilet_door.jpeg" alt="Doors"/>
+        <figcaption>
+          <h3>Aluminum Doors</h3>
+          <p>High-quality aluminum doors for residential and commercial use.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure class="long">
+        <img src="./assets/images/fr_house.jpg" alt="Doors"/>
+        <figcaption>
+          <h3>Curtain systems / Office partitions</h3>
+          <p>Customizable curtain systems and office partitions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/our_work/beautiful_railing_window.jpeg" alt="Doors"/>
+        <figcaption>
+          <h3>Railing Systems</h3>
+          <p>Sturdy and stylish railing solutions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/images/our_work/glass_balustrade.jpeg" alt="Doors"/>
+        <figcaption>
+          <h3>Glass Balustrades</h3>
+          <p>Transparent and elegant glass balustrade solutions for any space.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure class="long">
+        <img src="./assets/images/our_work/Glass_door_and_railing.jpeg" alt="Doors"/>
+        <figcaption>
+          <h3>Glass Doors</h3>
+          <p>Transparent, opaque or semi-transparent glass door solutions accorting to your space and needs.</p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="./assets/images/our_work/aluminum-brake.jpg" alt="Aluminum-brake"/>
+        <figcaption>
+          <h3>Aluminum Sheet bending</h3>
+          <p>Straight and precise sheet/foil bending of sheets up to <b>16 meters</b></p>
+          <button>Get a Quote</button>
+        </figcaption>
+      </figure>
+      <figure class="short">
+        <img src="./assets/images/our_work/casement-handles1.jpg" alt="acessories">
+        <figcaption>
+          <h3>Sales of accesories</h3>
+          <p>We sell aluminum, roofing and glass acessories in affordable prices.</p>
+          <button>Find the cost of ...</button>
+        </figcaption>
+      </figure>
+      <a href="#" class="more">
+        <button>See More</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="home-gallery">
+    <div class="home-gallery__content">
+      <h2><span class="focus">Our work:</span> Quality Aluminum fabrication</h2>
+      <p>Take a look at some of our completed aluminum window and door projects. We take pride in our craftsmanship and attention to detail.</p>
+    </div>
+    <div class="home-gallery__img">
+      <figure>
+        <img src="./assets/images/csc_nig.jpg" alt="casement-window"/>
+      </figure>
+      <figure>
+        <img src="./assets/images/fr_grey.webp" alt="casement-window"/>
+      </figure>
+      <figure>
+        <img src="./assets/images/sli_black.jpg" alt="casement-window"/>
+      </figure>
+      <figure>
+        <img src="./assets/images/csc_nig.jpg" alt="casement-window"/>
+      </figure>
+    </div>
+    <a href="#">See More Photos</a>
+  </section>
+
+  <!-- CHOOSE -->
+  <section class="choose">
+    <div class="wrapper">
+      <div class="choose__content">
+        <h2>Why <span class="focus">choose</span> ohons tech?</h2>
+        <ul>
+          <li>
+            <h3>Experienced fabricators</h3>
+            <p>Skilled professionals with years of experience in aluminum fabrication.</p>
+          </li>
+          <li>
+            <h3>Quality Materials</h3>
+            <p>use of durable aluminum and reliable hardware for long lasting results</p>
+          </li>
+          <li>
+            <h3>Custom  Window solutions</h3>
+            <p>Made-to-order windows and doors tailored specifically for your space.</p>
+          </li>
+          <li>
+            <h3>Affordable pricing</h3>
+            <p>Competitive rates with exceptional value for money</p>
+          </li>
+          <li>
+            <h3>Fast Installation</h3>
+            <p>Efficient and timely installation to fit your schedule</p>
+          </li>
+        </ul>
+      </div>
+      <div class="choose__img">
+        <img src="./assets/images/fr_abroad.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section id="faqs" class="faqs">
+    <h2>Frequently Asked <span class="focus">Questions</span></h2>
+    <div class="faqs__questions">
+      <details name="details">
+        <summary>
+          How much does a window cost?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Depends on the type. You need not worry about cost that much. We offer decent prices for all of our products. However, to see an estimated and frequently updated list of prices check <a href="tel:23408038839073">here.</a>
+        </p>
+      </details>
+      <details name="details">
+        <summary>
+          When are you available?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Our working hours are from <b>8AM to 6PM</b>. You can meet us at work from Monday to Saturday.
+        </p>
+      </details>
+      <details name="details">
+        <summary>
+          Who and where do you deliver to?
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+          </svg>
+        </summary>
+        <p>
+          Anyone and anywhere within Nigeria.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__content">
+      <h3>So, what's next?</h3>
+      <div class="btns">
+        <a href="#">Get a quote</a>
+        <a href="./find-us/">Find Us</a>
+        <button id="contact-btn">Contact Us</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">
+    <h2>Ohons Tech</h2>
+    <span>"No job is too small"</span>
+  </div>
+
+  <div class="content">
+    <div class="content__group">
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="./find-us/">Find us</a></li>
+        <li><button id="contact-btn">Contact Us</button></li>
+      </ul>
+    </div>
+    <div class="social-icons">
+      <ul>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="https://wa.me/2348038839073?text=Hello%20Ohons%20Tech.%20I%20interested%20in%20your%20services."><i class="fa fa-whatsapp"></i></a>
+        <a href="mailto:ehiejakhian@gmail.com"><i class="fa fa-envelope-o"></i></a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    &copy;2026 - Ohons tech
+    <div class="attribution">
+      Powered by <a href="https://ehiejakhian.github.io/">Ehi Ejakhian</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- TEMPLATES -->
+<template id="service-template">
+  <div class="service">
+    <img src="./assets/svgs/frameless.svg" alt="img">
+    <div class="heading">
+      <h3>Sliding windows</h3>
+    </div>
+    <p>
+      High quality aluminum sliding windows for smooth operation and modern look.
+    </p>
+  </div>
+</template>
+
+<script type="module" src="./scripts/loader.js"></script>
+<script src="./scripts/theme.js"></script>
+<script defer src="./scripts/contact.js" type="module"></script>
+</body>
+</html>

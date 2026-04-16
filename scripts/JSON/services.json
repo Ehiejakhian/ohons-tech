@@ -1,0 +1,38 @@
+
+[
+  {
+    "svg": "./assets/svgs/sliding.svg",
+    "title": "Sliding Windows and Doors",
+    "content": "High quality aluminum sliding windows for smooth operation and modern look."
+  },
+  {
+    "svg": "./assets/svgs/casement.svg",
+    "title": "Casement Windows and Doors",
+    "content": "Durable and secure casement windows for homes and offices."
+  },
+  {
+    "svg": "./assets/svgs/frameless.svg",
+    "title": "Frameless Windows",
+    "content": "Modern and decent frameless windows for homes and offices."
+  },
+  {
+    "svg": "./assets/svgs/glass-door.svg",
+    "title": "Glass Doors",
+    "content": "Professional looking glass doors for homes, shops and offices."
+  },
+  {
+    "svg": "./assets/svgs/office-partitions.svg",
+    "title": "Office partitions",
+    "content": "Aluminu, parzitions for creating modern, flexible office spaces."
+  },
+  {
+    "svg": "./assets/svgs/frameless.svg",
+    "title": "Window Repairs",
+    "content": "Expert repair and maintenance of damaged aluminum windows."
+  },
+  {
+    "svg": "./assets/svgs/frameless.svg",
+    "title": "Installation",
+    "content": "Professional Installation of aluminum windows and doors."
+  }
+]

@@ -1,0 +1,13 @@
+<svg width="99" height="65" viewBox="0 0 99 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M66 58H85.5M85.5 58L82 56V59.5L85.5 58Z" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<path d="M78.3016 6H91L66 35V20.8919L78.3016 6Z" fill="#EEEEEE"/>
+<path d="M18.3175 6H30L7 34V20.3784L18.3175 6Z" fill="#EEEEEE"/>
+<path d="M66 53.5V7C66 6.44772 66.4477 6 67 6H91.5C92.0523 6 92.5 6.44772 92.5 7V58" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<rect x="1" y="1" width="97" height="63" rx="1" stroke="black" stroke-width="2"/>
+<path d="M59 30.5V42L45.5 59H36L59 30.5Z" fill="#EEEEEE"/>
+<rect x="33.5" y="6.5" width="27" height="52" stroke="black" stroke-width="3"/>
+<mask id="path-8-inside-1_4_16" fill="white">
+<path d="M5 6C5 5.44771 5.44772 5 6 5H29C29.5523 5 30 5.44772 30 6V59C30 59.5523 29.5523 60 29 60H6C5.44772 60 5 59.5523 5 59V6Z"/>
+</mask>
+<path d="M3 6C3 4.89543 3.89543 4 5 4H29C30.1046 4 31 4.89543 31 6H29H7H3ZM31 59C31 60.1046 30.1046 61 29 61H5C3.89543 61 3 60.1046 3 59H7H29H31ZM5 61C3.89543 61 3 60.1046 3 59V6C3 4.89543 3.89543 4 5 4L7 6V59L5 61ZM29 4C30.1046 4 31 4.89543 31 6V59C31 60.1046 30.1046 61 29 61V59V6V4Z" fill="black" mask="url(#path-8-inside-1_4_16)"/>
+</svg>
