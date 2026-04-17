@@ -7,7 +7,8 @@ let clicked = false;
 if (contact_btns) {
   // Listen for clicks
   contact_btns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       clicked == false ? clicked = true : clicked = false;
       displayForm(clicked)
     })

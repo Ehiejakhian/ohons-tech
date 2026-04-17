@@ -46,7 +46,7 @@ function changeTheme(theme) {
     
     //For Text on white bg
     rootStyle.setProperty('--text-on-bg', '#080808');
-    rootStyle.setProperty('--white', '#acacac');
+    rootStyle.setProperty('--white', '#ffffff');
     rootStyle.setProperty('--light-white', '#121212bb');
     
     themeBtn ? themeBtn.classList.remove('light') : null;  

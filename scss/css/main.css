@@ -262,6 +262,41 @@ img {
   flex-flow: column;
   gap: 15px;
 }
+.contact-stuff form .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.contact-stuff form .heading button {
+  cursor: pointer;
+  color: var(--text);
+  background: transparent;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.contact-stuff form .heading button:hover {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.contact-stuff form .heading button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
 .contact-stuff form .btns {
   display: flex;
   justify-content: space-between;
@@ -286,7 +321,7 @@ img {
   gap: 10px;
 }
 .contact-stuff form .btns button:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -376,15 +411,18 @@ img {
 }
 .contact-stuff form .fields .field.error .input input, .contact-stuff form .fields .field.error .input textarea {
   border-color: crimson;
+  outline-color: crimson;
 }
 .contact-stuff form .fields .field.error .error-msg {
   color: crimson;
+  opacity: 1;
 }
 .contact-stuff form .fields .field.valid .input label {
   color: goldenrod;
 }
 .contact-stuff form .fields .field.valid .input input, .contact-stuff form .fields .field.valid .input textarea {
   border-color: goldenrod;
+  outline-color: goldenrod;
 }
 .contact-stuff form .fields .field.valid .error-msg {
   color: goldenrod;
@@ -422,6 +460,20 @@ img {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
+}
+@media (min-width: 700px) {
+  .contact-stuff {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+    gap: 0;
+  }
+  .contact-stuff form {
+    position: static;
+    max-width: 500px;
+    padding: 30px;
+  }
 }
 
 header {
@@ -612,7 +664,7 @@ header nav > button span {
   gap: 0;
 }
 header nav > button svg {
-  fill: var(--var(--text));
+  fill: var(--bg);
 }
 header nav > button:hover svg {
   fill: var(--text);
@@ -716,7 +768,7 @@ header #checkbox:checked ~ .overlay {
     gap: 10px;
   }
   header nav .theme:hover {
-    color: var(--medium);
+    color: var(--bg);
     background: var(--text);
     border-color: var(--text);
   }
@@ -991,7 +1043,6 @@ header #checkbox:checked ~ .overlay {
   margin-top: 100px;
   padding: 20px var(--side-p);
   min-height: 60dvh;
-  border-bottom: 1px solid var(--medium);
   background: var(--bg);
   display: flex;
   justify-content: center;
@@ -1026,7 +1077,7 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .about__content button:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -1037,29 +1088,90 @@ header #checkbox:checked ~ .overlay {
   flex-flow: row;
   gap: 0;
 }
-.about__img {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-.about__img figure {
-  position: relative;
-  min-height: 400px;
-  overflow: hidden;
-}
-.about__img figure img {
-  height: 100%;
+.about__content .achievements {
+  margin-top: 50px;
   width: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+  flex-flow: column;
+  gap: 20px;
 }
-.about__img figure figcaption {
+@media (min-width: 500px) {
+  .about__content .achievements {
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    flex-flow: row wrap;
+    gap: 20px;
+  }
+}
+.about__content .achievements > div {
+  flex: 1;
+  border: 1px solid;
+  padding: 20px;
+  position: relative;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+.about__content .achievements > div .bg {
   position: absolute;
+  background: var(--white);
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60%;
+  overflow: hidden;
+  border-bottom: 1px solid var(--medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.about__content .achievements > div .bg i {
+  transform: translate(50%);
+}
+.about__content .achievements > div .bg :nth-child(2n) {
+  color: var(--medium);
+}
+.about__content .achievements > div .bg :nth-child(3n) {
+  color: var(--special-link);
+  transform: translateY(-100%);
+}
+.about__content .achievements > div .bg :nth-child(4n) {
+  color: goldenrod;
+  transform: translate(-50%, 20%);
+}
+.about__content .achievements > div .bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  border: 2px solid var(--dark);
-  padding: 20px;
-  background: var(--light-white);
+  background: teal;
+  opacity: 0.1;
+}
+.about__content .achievements > div .number {
+  border: 2px solid;
+  width: 150px;
+  height: 150px;
+  font-size: 2rem;
+  font-family: "space-grotesk";
+  font-weight: bold;
+  border-radius: 50%;
+  z-index: 1;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
 }
 
 .find-us-about {
@@ -1186,7 +1298,7 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .home-services__img figure figcaption button:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -1218,7 +1330,7 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .home-services__img a.more:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -1416,7 +1528,7 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .home-gallery > a:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -1519,7 +1631,7 @@ header #checkbox:checked ~ .overlay {
   gap: 10px;
 }
 .gallery__tools label:hover {
-  color: var(--medium);
+  color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
@@ -1712,6 +1824,7 @@ header #checkbox:checked ~ .overlay {
   color: var(--text);
   background: var(--bg);
   transition: all 0.3s;
+  line-height: 1.5;
 }
 .faqs__questions details[open] summary svg {
   transform: rotate(180deg);

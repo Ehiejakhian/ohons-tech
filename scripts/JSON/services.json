@@ -2,8 +2,21 @@
 [
   {
     "svg": "./assets/svgs/sliding.svg",
+    "title": "Roofing Services",
+    "content": "Professional roofing solutions for residential and commercial properties."
+    
+  },
+  {
+    "svg": "./assets/svgs/sliding.svg",
     "title": "Sliding Windows and Doors",
     "content": "High quality aluminum sliding windows for smooth operation and modern look."
+    
+  },
+  {
+    "svg": "./assets/svgs/sliding.svg",
+    "title": "Sliding Windows and Doors",
+    "content": "High quality aluminum sliding windows for smooth operation and modern look."
+    
   },
   {
     "svg": "./assets/svgs/casement.svg",

@@ -25,11 +25,14 @@
 
 <!-- CONTACT FORM -->
 <section class="contact">
-  <input type="checkbox" name="contact-ch" id="contact-ch"/>
+  <input type="checkbox" name="contact-ch" id="contact-ch" checked/>
   <div class="contact-stuff">
     <span class="overlay" id="contact-btn"></span>
     <form>
-      <h2><span class="focus">Contact</span> Us</h2>
+      <div class="heading">
+        <h2><span class="focus">Contact</span> Us</h2>
+        <button id="contact-btn"><i class="fa fa-close"></i></button>
+      </div>
       <p>Feel free to contact us via any of the provided channels below.</p>
       <div class="btns">
         <button><i class="fa fa-phone"></i></button>
@@ -134,11 +137,34 @@
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="about__content">
       <h2><span class="focus">About</span> Ohons Tech</h2>
       <p>At ohons tech, we specialize in window and door fabrication for homes, offices and commercial spaces. With years of experience, we craft high quality sliding windows, casement windows, glass and aluminum doors and office partitions tailored to our client's needs.</p>
       <button id="contact-btn">Contact Us</button>
+      <div class="achievements">
+        <div>
+          <div class="bg time">
+            <i class="fa fa-clock-o"></i>
+          </div>
+          <span class="number">20+</span>
+          <span class="text">Years of experience</span>
+        </div>
+        <div>
+          <div class="bg projects">
+            <i class="fa fa-folder-o"></i>
+          </div>
+          <span class="number">500+</span>
+          <span class="text">Customer Satisfied projects</span>
+        </div>
+        <div>
+          <div class="bg more">
+            <i class="fa fa-envelope-o"></i>
+          </div>
+          <span class="number">200+</span>
+          <span class="text">Lorem ipsum dolor</span>
+        </div>
+      </div>
     </div>
   </section>
   
@@ -212,40 +238,8 @@
           <button>Get a Quote</button>
         </figcaption>
       </figure>
-      <figure>
-        <img src="./assets/images/our_work/glass_balustrade.jpeg" alt="Doors"/>
-        <figcaption>
-          <h3>Glass Balustrades</h3>
-          <p>Transparent and elegant glass balustrade solutions for any space.</p>
-          <button>Get a Quote</button>
-        </figcaption>
-      </figure>
-      <figure class="long">
-        <img src="./assets/images/our_work/Glass_door_and_railing.jpeg" alt="Doors"/>
-        <figcaption>
-          <h3>Glass Doors</h3>
-          <p>Transparent, opaque or semi-transparent glass door solutions accorting to your space and needs.</p>
-          <button>Get a Quote</button>
-        </figcaption>
-      </figure>
-
-      <figure>
-        <img src="./assets/images/our_work/aluminum-brake.jpg" alt="Aluminum-brake"/>
-        <figcaption>
-          <h3>Aluminum Sheet bending</h3>
-          <p>Straight and precise sheet/foil bending of sheets up to <b>16 meters</b></p>
-          <button>Get a Quote</button>
-        </figcaption>
-      </figure>
-      <figure class="short">
-        <img src="./assets/images/our_work/casement-handles1.jpg" alt="acessories">
-        <figcaption>
-          <h3>Sales of accesories</h3>
-          <p>We sell aluminum, roofing and glass acessories in affordable prices.</p>
-          <button>Find the cost of ...</button>
-        </figcaption>
-      </figure>
-      <a href="#" class="more">
+      
+      <a href="./services/" class="more">
         <button>See More</button>
       </a>
     </div>
@@ -286,7 +280,7 @@
           </li>
           <li>
             <h3>Quality Materials</h3>
-            <p>use of durable aluminum and reliable hardware for long lasting results</p>
+            <p>Use of durable aluminum and reliable hardware for long lasting results</p>
           </li>
           <li>
             <h3>Custom  Window solutions</h3>
@@ -370,9 +364,9 @@
     <div class="content__group">
       <h3>Useful Links</h3>
       <ul>
-        <li><a href="#">About us</a></li>
+        <li><a href="#about">About us</a></li>
         <li><a href="./services/">Services</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="./gallery/">Gallery</a></li>
         <li><a href="./find-us/">Find us</a></li>
         <li><button id="contact-btn">Contact Us</button></li>
       </ul>
@@ -412,5 +406,7 @@
 <script type="module" src="./scripts/loader.js"></script>
 <script src="./scripts/theme.js"></script>
 <script defer src="./scripts/contact.js" type="module"></script>
+<script defer src="./scripts/contact__form.js" type="module"></script>
+<script defer src="./scripts/about__populate.js" type="module"></script>
 </body>
 </html>
