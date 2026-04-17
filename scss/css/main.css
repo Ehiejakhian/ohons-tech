@@ -107,7 +107,6 @@ img {
 }
 
 .loader {
-  border: 2px solid;
   background: var(--bg);
   position: fixed;
   z-index: 100;
@@ -459,14 +458,20 @@ header .logo {
   flex-flow: row;
   gap: 10px;
 }
-header .logo__img {
+header .logo svg {
   width: 40px;
   height: 40px;
-}
-header .logo__img img {
-  width: 100%;
-  height: 100%;
+  max-width: 40px;
+  max-height: 40px;
   object-fit: contain;
+  fill: var(--text);
+}
+header .logo svg path.shadow {
+  fill: var(--text);
+}
+header .logo svg rect, header .logo svg path.divider {
+  stroke: var(--text);
+  fill: transparent;
 }
 header .logo__text {
   display: flex;
@@ -567,17 +572,20 @@ header nav ul {
   flex-flow: column;
   gap: 10px;
 }
-header nav ul li a {
+header nav ul li a, header nav ul li button {
   color: inherit;
   transition: all 0.3s;
   text-decoration: none;
+  font: inherit;
+  border: none;
+  background: transparent;
 }
-header nav ul li a:hover {
+header nav ul li a:hover, header nav ul li button:hover {
   color: var(--special-link);
 }
-header nav button {
+header nav > button {
   cursor: pointer;
-  color: var(--bg);
+  color: inherit;
   background: transparent;
   padding: 10px 20px;
   font: inherit;
@@ -591,17 +599,35 @@ header nav button {
   flex-flow: row;
   gap: 10px;
 }
-header nav button:hover {
-  color: var(--medium);
-  background: var(--text);
-  border-color: var(--text);
+header nav > button:hover {
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--bg);
 }
-header nav button span {
+header nav > button span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
+}
+header nav > button svg {
+  fill: var(--var(--text));
+}
+header nav > button:hover svg {
+  fill: var(--text);
+}
+header nav > button.light .light-mode {
+  display: none;
+}
+header nav > button.light .dark-mode {
+  display: block;
+}
+header nav > button.dark .light-mode {
+  display: block;
+}
+header nav > button.dark .dark-mode {
+  display: none;
 }
 header #checkbox:checked ~ .hamburger {
   opacity: 0;
@@ -659,7 +685,7 @@ header #checkbox:checked ~ .overlay {
     gap: 10px;
   }
   header nav ul li button:hover {
-    color: var(--medium);
+    color: var(--bg);
     background: var(--text);
     border-color: var(--text);
   }
@@ -669,6 +695,9 @@ header #checkbox:checked ~ .overlay {
     align-items: center;
     flex-flow: row;
     gap: 0;
+  }
+  header nav ul li button svg {
+    fill: var(--text);
   }
   header nav .theme {
     cursor: pointer;
@@ -698,6 +727,12 @@ header #checkbox:checked ~ .overlay {
     flex-flow: row;
     gap: 0;
   }
+  header nav .theme svg {
+    fill: var(--text);
+  }
+  header nav .theme:hover svg {
+    fill: var(--bg);
+  }
 }
 
 .hero {
@@ -719,6 +754,11 @@ header #checkbox:checked ~ .overlay {
   height: 100%;
   height: 60dvh;
   object-fit: cover;
+}
+@media (max-width: 500px) {
+  .hero__img img, .hero [class*=__img] img {
+    min-height: 70dvh;
+  }
 }
 .hero__content {
   background: rgba(255, 255, 255, 0.8);
@@ -750,7 +790,7 @@ header #checkbox:checked ~ .overlay {
   text-transform: uppercase;
 }
 .hero__content .logo h1 .focus {
-  -webkit-text-stroke: 2px var(--text);
+  -webkit-text-stroke: 2px var(--text-on-bg);
 }
 .hero__content .logo p {
   font-size: 18px;
