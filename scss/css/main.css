@@ -215,15 +215,15 @@ img {
     transform: translateY(0);
   }
 }
-.contact #contact-ch {
+.contact input[type=checkbox], .quote input[type=checkbox] {
   display: none;
 }
-.contact #contact-ch:checked ~ .contact-stuff {
+.contact input[type=checkbox]:checked ~ .contact-stuff, .contact input[type=checkbox]:checked ~ .quote-whole, .quote input[type=checkbox]:checked ~ .contact-stuff, .quote input[type=checkbox]:checked ~ .quote-whole {
   transform: translateY(0);
   opacity: 1;
 }
 
-.contact-stuff {
+.contact-stuff, .quote-whole {
   position: fixed;
   transform: translateY(100%);
   opacity: 0;
@@ -239,7 +239,7 @@ img {
   flex-flow: column;
   gap: 0;
 }
-.contact-stuff > .overlay {
+.contact-stuff > .overlay, .quote-whole > .overlay {
   position: absolute;
   z-index: 16;
   top: 0;
@@ -248,7 +248,7 @@ img {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
 }
-.contact-stuff form {
+.contact-stuff form, .quote-whole form {
   position: absolute;
   z-index: 17;
   width: 100%;
@@ -262,14 +262,14 @@ img {
   flex-flow: column;
   gap: 15px;
 }
-.contact-stuff form .heading {
+.contact-stuff form .heading, .quote-whole form .heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
   gap: 20px;
 }
-.contact-stuff form .heading button {
+.contact-stuff form .heading button, .quote-whole form .heading button {
   cursor: pointer;
   color: var(--text);
   background: transparent;
@@ -285,26 +285,26 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .heading button:hover {
+.contact-stuff form .heading button:hover, .quote-whole form .heading button:hover {
   color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
-.contact-stuff form .heading button span {
+.contact-stuff form .heading button span, .quote-whole form .heading button span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .btns {
+.contact-stuff form .btns, .quote-whole form .btns {
   display: flex;
   justify-content: space-between;
   align-items: normal;
   flex-flow: row;
   gap: 20px;
 }
-.contact-stuff form .btns button {
+.contact-stuff form .btns button, .quote-whole form .btns button {
   cursor: pointer;
   color: var(--text);
   background: transparent;
@@ -320,25 +320,25 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .btns button:hover {
+.contact-stuff form .btns button:hover, .quote-whole form .btns button:hover {
   color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
-.contact-stuff form .btns button span {
+.contact-stuff form .btns button span, .quote-whole form .btns button span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .btns button {
+.contact-stuff form .btns button, .quote-whole form .btns button {
   flex: 1;
 }
-.contact-stuff form .btns button i {
+.contact-stuff form .btns button i, .quote-whole form .btns button i {
   font-size: 1rem;
 }
-.contact-stuff form .fields {
+.contact-stuff form .fields, .quote-whole form .fields {
   margin-top: 10px;
   display: flex;
   justify-content: normal;
@@ -346,14 +346,14 @@ img {
   flex-flow: column;
   gap: 25px;
 }
-.contact-stuff form .fields .field {
+.contact-stuff form .fields .field, .quote-whole form .fields .field {
   display: flex;
   justify-content: normal;
   align-items: normal;
   flex-flow: column;
   gap: 5px;
 }
-.contact-stuff form .fields .field .input {
+.contact-stuff form .fields .field .input, .quote-whole form .fields .field .input {
   position: relative;
   display: flex;
   justify-content: normal;
@@ -361,7 +361,7 @@ img {
   flex-flow: column;
   gap: 0;
 }
-.contact-stuff form .fields .field .input label {
+.contact-stuff form .fields .field .input label, .quote-whole form .fields .field .input label {
   position: absolute;
   padding: 5px;
   transform: translateY(-50%);
@@ -369,7 +369,7 @@ img {
   background: var(--bg);
   font-size: 14px;
 }
-.contact-stuff form .fields .field .input input, .contact-stuff form .fields .field .input textarea {
+.contact-stuff form .fields .field .input input, .quote-whole form .fields .field .input input, .contact-stuff form .fields .field .input textarea, .quote-whole form .fields .field .input textarea, .contact-stuff form .fields .field .input select, .quote-whole form .fields .field .input select {
   color: var(--text);
   width: 100%;
   padding: 20px;
@@ -379,10 +379,10 @@ img {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.contact-stuff form .fields .field .input textarea {
+.contact-stuff form .fields .field .input textarea, .quote-whole form .fields .field .input textarea {
   resize: vertical;
 }
-.contact-stuff form .fields .field .error-msg {
+.contact-stuff form .fields .field .error-msg, .quote-whole form .fields .field .error-msg {
   opacity: 0;
   color: var(--text);
   font-size: 14px;
@@ -393,7 +393,7 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .fields .field .error-msg::before {
+.contact-stuff form .fields .field .error-msg::before, .quote-whole form .fields .field .error-msg::before {
   content: "!";
   width: 20px;
   height: 20px;
@@ -406,29 +406,29 @@ img {
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .fields .field.error .input label {
+.contact-stuff form .fields .field.error .input label, .quote-whole form .fields .field.error .input label {
   color: crimson;
 }
-.contact-stuff form .fields .field.error .input input, .contact-stuff form .fields .field.error .input textarea {
+.contact-stuff form .fields .field.error .input input, .quote-whole form .fields .field.error .input input, .contact-stuff form .fields .field.error .input textarea, .quote-whole form .fields .field.error .input textarea {
   border-color: crimson;
   outline-color: crimson;
 }
-.contact-stuff form .fields .field.error .error-msg {
+.contact-stuff form .fields .field.error .error-msg, .quote-whole form .fields .field.error .error-msg {
   color: crimson;
   opacity: 1;
 }
-.contact-stuff form .fields .field.valid .input label {
+.contact-stuff form .fields .field.valid .input label, .quote-whole form .fields .field.valid .input label {
   color: goldenrod;
 }
-.contact-stuff form .fields .field.valid .input input, .contact-stuff form .fields .field.valid .input textarea {
+.contact-stuff form .fields .field.valid .input input, .quote-whole form .fields .field.valid .input input, .contact-stuff form .fields .field.valid .input textarea, .quote-whole form .fields .field.valid .input textarea {
   border-color: goldenrod;
   outline-color: goldenrod;
 }
-.contact-stuff form .fields .field.valid .error-msg {
+.contact-stuff form .fields .field.valid .error-msg, .quote-whole form .fields .field.valid .error-msg {
   color: goldenrod;
   opacity: 0;
 }
-.contact-stuff form .fields > button.chat {
+.contact-stuff form .fields > button.chat, .quote-whole form .fields > button.chat {
   cursor: pointer;
   color: var(--bg);
   background: var(--text);
@@ -444,32 +444,32 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .fields > button.chat:hover {
+.contact-stuff form .fields > button.chat:hover, .quote-whole form .fields > button.chat:hover {
   color: var(--bg);
   background: var(--special-link);
   border-color: var(--special-link);
 }
-.contact-stuff form .fields > button.chat span {
+.contact-stuff form .fields > button.chat span, .quote-whole form .fields > button.chat span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .fields > button.chat {
+.contact-stuff form .fields > button.chat, .quote-whole form .fields > button.chat {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
 }
 @media (min-width: 700px) {
-  .contact-stuff {
+  .contact-stuff, .quote-whole {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row;
     gap: 0;
   }
-  .contact-stuff form {
+  .contact-stuff form, .quote-whole form {
     position: static;
     max-width: 500px;
     padding: 30px;
@@ -1117,6 +1117,7 @@ header #checkbox:checked ~ .overlay {
   padding: 20px;
   position: relative;
   border: 2px solid;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1893,6 +1894,36 @@ header #checkbox:checked ~ .overlay {
   align-items: center;
   flex-flow: row;
   gap: 0;
+}
+
+.success-message {
+  display: none;
+}
+.success-message.show {
+  position: fixed;
+  z-index: 17;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid;
+  padding: 20px;
+  background: var(--text);
+  color: var(--bg);
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-flow: row;
+  gap: 0;
+}
+.success-message__text h3 {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.success-message__text h3 i {
+  border: 2px solid;
+  border-radius: 50%;
 }
 
 footer {

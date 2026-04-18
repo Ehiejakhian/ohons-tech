@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon"/>
+  <link rel="shortcut icon" href="./assets/images/whole-logo.png" type="image/x-icon">
   <title>Ohons Tech | Aluminum, Glass & Roofing services</title>
   <link rel="stylesheet" href="./scss/css/main.css"/>
   <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css"/>
@@ -59,6 +59,55 @@
     </form>
   </div>
 </section>
+
+<section class="quote">
+  <input type="checkbox" id="quote-ch"/>
+  <div class="quote-whole">
+    <span class="overlay" id="quote-btn"></span>
+    <form class="quote-form">
+      <div class="heading">
+        <h2>Request a <span class="focus">Quote</span></h2>
+        <button id="quote-btn"><i class="fa fa-close"></i></button>
+      </div>
+      <p>Feel free to select your needs and ask us for an accurate esitmate.</p>
+      <div class="fields">
+        <div class="field service">
+          <div class="input">
+            <label for="service">Select a Service</label>
+            <select class="select" id="service">
+              <option value="Select a service" selected>Select a Service</option>
+              <option value="Sliding Window / Door">Sliding Window / Door</option>
+              <option value="Casement Window / Door">Casement Window / Door</option>
+              <option value="Frameless window / Door">Frameless Window / Door</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Glass">Glass</option>
+              <option value="Railing System">Railing System</option>
+              <option value="Sheet Bending / Aluminum brake">Sheet Bending / Aluminum brake</option>
+              <option value="Glass balustrade / Glass Railing">Glass balustrade / Glass Railing</option>
+            </select>
+          </div>
+          <span class="error-msg"></span>
+        </div>
+        <div class="field name">
+          <div class="input">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" value="John Doe" placeholder="Type here ...">
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <div class="field msg">
+          <div class="input">
+            <label for="msg">Your Message</label>
+            <textarea name="msg" id="msg" placeholder="Type here ..."></textarea>
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <button class="chat">Send Request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 
 <header>
   <div class="content">
@@ -158,11 +207,11 @@
           <span class="text">Customer Satisfied projects</span>
         </div>
         <div>
-          <div class="bg more">
-            <i class="fa fa-envelope-o"></i>
+          <div class="bg mission">
+            <i class="fa fa-sun-o"></i>
           </div>
-          <span class="number">200+</span>
-          <span class="text">Lorem ipsum dolor</span>
+          <span class="number">1</span>
+          <span class="text">Goal; Quality products</span>
         </div>
       </div>
     </div>
@@ -179,7 +228,7 @@
         <figcaption>
           <h3>Roofing Services</h3>
           <p>Professional roofing solutions for residential and commercial properties.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure>
@@ -187,7 +236,7 @@
         <figcaption>
           <h3>Sliding Windows</h3>
           <p>Modern sliding window solutions for any space.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure>
@@ -195,7 +244,7 @@
         <figcaption>
           <h3>Glass Cutting and Sales</h3>
           <p>Get quality glass of any size and width at decent prices.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure>
@@ -203,7 +252,7 @@
         <figcaption>
           <h3>Casement Windows</h3>
           <p>Classic casement window solutions for any space.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure>
@@ -211,7 +260,7 @@
         <figcaption>
           <h3>Frameless Windows</h3>
           <p>Contemporary frameless window solutions for any space.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure class="long">
@@ -219,7 +268,7 @@
         <figcaption>
           <h3>Aluminum Doors</h3>
           <p>High-quality aluminum doors for residential and commercial use.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure class="long">
@@ -227,7 +276,7 @@
         <figcaption>
           <h3>Curtain systems / Office partitions</h3>
           <p>Customizable curtain systems and office partitions for any space.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       <figure>
@@ -235,7 +284,7 @@
         <figcaption>
           <h3>Railing Systems</h3>
           <p>Sturdy and stylish railing solutions for any space.</p>
-          <button>Get a Quote</button>
+          <button id="quote-btn">Get a Quote</button>
         </figcaption>
       </figure>
       
@@ -346,7 +395,7 @@
     <div class="cta__content">
       <h3>So, what's next?</h3>
       <div class="btns">
-        <a href="#">Request a quote</a>
+        <button id="quote-btn">Request a quote</button>
         <a href="./find-us/">Find Us</a>
         <button id="contact-btn">Contact Us</button>
       </div>
@@ -407,6 +456,7 @@
 <script src="./scripts/theme.js"></script>
 <script defer src="./scripts/contact.js" type="module"></script>
 <script defer src="./scripts/contact__form.js" type="module"></script>
+<script defer src="./scripts/quote.js" type="module"></script>
 <script defer src="./scripts/about__populate.js" type="module"></script>
 </body>
 </html>

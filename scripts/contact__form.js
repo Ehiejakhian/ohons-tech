@@ -1,15 +1,17 @@
 import { sel } from './util/methods.js';
 
-let name = sel('#name');
-let message = sel('#msg');
+let name = sel('.contact #name');
+let message = sel('.contact #msg');
 
-let nameDiv = sel('.field.name');
-let messageDiv = sel('.field.msg');
+let nameDiv = sel('.contact .field.name');
+let messageDiv = sel('.contact .field.msg');
 
 let error__name = sel('.error-msg',false, nameDiv);
 let error__message = sel('.error-msg', false, messageDiv)
 
 let submitBtn = sel('.chat') || sel('.call');
+
+let contact__type = sel('.contact [name=contact-type]');
 
 let nameState = false;
 let messageState = false;
@@ -97,9 +99,11 @@ function displaySuccessMessage() {
   wrapper.className = 'success-message';
   wrapper.innerHTML = `
     <div class="success-message__inner">
-      <svg class="success-message__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="success-message__text">
-        <h3>Message sent</h3>
+        <h3>
+          <i class="fa fa-check"></i>
+          <span>Message Sent</span>
+        </h3>
         <p>Thanks — we'll get back to you shortly.</p>
       </div>
     </div>
@@ -120,4 +124,15 @@ function displaySuccessMessage() {
   }, AUTO_DISMISS_MS);
 }
 
-function sendMessage() {}
+function sendMessage() {
+  contact__type.forEach(type => {
+    if (type.value == "phone") {
+
+    } else if (type.value == "whatsapp") {
+      let text = `https://wa.me/2348142340182?text=Hello%20Ohons%20Tech.%20My%20name%20is%20${name.value}.%20I%20am%20contacting%20you%20from%20your%20website.%20${message.value}`;
+      // window.ur
+    } else if (type == "email") {
+      
+    }
+  })
+}
