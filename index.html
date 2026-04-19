@@ -28,22 +28,35 @@
   <input type="checkbox" name="contact-ch" id="contact-ch"/>
   <div class="contact-stuff">
     <span class="overlay" id="contact-btn"></span>
-    <form>
+    <form class="form">
       <div class="heading">
         <h2><span class="focus">Contact</span> Us</h2>
         <button id="contact-btn"><i class="fa fa-close"></i></button>
       </div>
       <p>Feel free to contact us via any of the provided channels below.</p>
       <div class="btns">
-        <button><i class="fa fa-phone"></i></button>
-        <button><i class="fa fa-whatsapp"></i></button>
-        <button><i class="fa fa-envelope"></i></button>
+        <input type="radio" name="contact-type" id="rad-phone"/>
+        <label for="rad-phone"><i class="fa fa-phone"></i></label>
+        <input type="radio" name="contact-type" id="rad-whatsapp" checked/>
+        <label for="rad-whatsapp"><i class="fa fa-whatsapp"></i></label>
+        <input type="radio" name="contact-type" id="rad-email"/>
+        <label for="rad-email"><i class="fa fa-envelope"></i></label>
       </div>
-      <div class="fields">
+      <div class="fields" id="phone-form">
+        <p class="phone-par">
+          <span>Phone <b>1</b>: (+234) <b>80 3883 9073</b></span>
+          <a href="tel:08038839073" id="call1">Call</a>
+        </p>
+        <p class="phone-par">
+          <span>Phone <b>2</b>: (+234) <b>80 3883 9073</b></span>
+          <a href="tel:08038839073" id="call2">Call</a>
+        </p>
+      </div>
+      <div class="fields" id="whatsapp-form">
         <div class="field name">
           <div class="input">
             <label for="name">Your Name</label>
-            <input type="text" id="name" value="John Doe" placeholder="Type here ...">
+            <input type="text" id="name" placeholder="John Doe">
           </div>
           <span class="error-msg">This field is required</span>
         </div>
@@ -55,6 +68,30 @@
           <span class="error-msg">This field is required</span>
         </div>
         <button class="chat">Chat</button>
+      </div>
+      <div class="fields" id="email-form">
+        <div class="field name">
+          <div class="input">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe">
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <div class="field email">
+          <div class="input">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="...@example.com">
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <div class="field msg">
+          <div class="input">
+            <label for="msg">Your Message</label>
+            <textarea name="msg" id="msg" placeholder="Type here ..."></textarea>
+          </div>
+          <span class="error-msg">This field is required</span>
+        </div>
+        <button class="mail">mail</button>
       </div>
     </form>
   </div>
@@ -108,7 +145,6 @@
   </div>
 </section>
 
-
 <header>
   <div class="content">
     <span class="logo">
@@ -160,10 +196,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__img">
-      <img src="./assets/images/csc_nig.jpg" alt="hero-bg" class="mobile"/>
+      <img src="./assets/images/our_work/ohons-tech.jpg" alt="">
       <img src="./assets/images/our_work/bench-cutter.jpg" alt="cutting aluminum stiles"/>
       <img src="./assets/images/our_work/drilling-an-angled-edge.jpg" alt="">
-      <img src="./assets/images/our_work/ohons-tech.jpg" alt="">
+      <img src="./assets/images/csc_nig.jpg" alt="hero-bg" class="mobile"/>
     </div>
     <div class="hero__content">
       <div class="logo">
@@ -302,19 +338,19 @@
     </div>
     <div class="home-gallery__img">
       <figure>
-        <img src="./assets/images/csc_nig.jpg" alt="casement-window"/>
+        <img src="./assets/images/our_work/frameless_window.jpeg" alt="casement-window"/>
       </figure>
       <figure>
-        <img src="./assets/images/fr_grey.webp" alt="casement-window"/>
+        <img src="./assets/images/our_work/3_sash_casement_window.jpeg" alt="casement-window"/>
       </figure>
       <figure>
-        <img src="./assets/images/sli_black.jpg" alt="casement-window"/>
+        <img src="./assets/images/our_work/railing2.jpeg" alt="casement-window"/>
       </figure>
       <figure>
-        <img src="./assets/images/csc_nig.jpg" alt="casement-window"/>
+        <img src="./assets/images/our_work/completed_building.jpeg" alt="casement-window"/>
       </figure>
     </div>
-    <a href="#">See More Photos</a>
+    <a href="./gallery/">See More Photos</a>
   </section>
 
   <!-- CHOOSE -->
@@ -458,5 +494,6 @@
 <script defer src="./scripts/contact__form.js" type="module"></script>
 <script defer src="./scripts/quote.js" type="module"></script>
 <script defer src="./scripts/about__populate.js" type="module"></script>
+<script type="module" src="./scripts/hero-slider.js"></script>
 </body>
 </html>

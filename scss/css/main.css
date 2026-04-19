@@ -240,7 +240,7 @@ img {
   gap: 0;
 }
 .contact-stuff > .overlay, .quote-whole > .overlay {
-  position: absolute;
+  position: fixed;
   z-index: 16;
   top: 0;
   bottom: 0;
@@ -304,7 +304,15 @@ img {
   flex-flow: row;
   gap: 20px;
 }
-.contact-stuff form .btns button, .quote-whole form .btns button {
+.contact-stuff form .btns input[type=radio], .quote-whole form .btns input[type=radio] {
+  display: none;
+}
+.contact-stuff form .btns input[type=radio]:checked + label, .quote-whole form .btns input[type=radio]:checked + label {
+  background: var(--special-link);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.contact-stuff form .btns label, .quote-whole form .btns label {
   cursor: pointer;
   color: var(--text);
   background: transparent;
@@ -320,26 +328,29 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .btns button:hover, .quote-whole form .btns button:hover {
+.contact-stuff form .btns label:hover, .quote-whole form .btns label:hover {
   color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
-.contact-stuff form .btns button span, .quote-whole form .btns button span {
+.contact-stuff form .btns label span, .quote-whole form .btns label span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .btns button, .quote-whole form .btns button {
+.contact-stuff form .btns label, .quote-whole form .btns label {
   flex: 1;
 }
-.contact-stuff form .btns button i, .quote-whole form .btns button i {
+.contact-stuff form .btns label i, .quote-whole form .btns label i {
   font-size: 1rem;
 }
 .contact-stuff form .fields, .quote-whole form .fields {
   margin-top: 10px;
+  display: none;
+}
+.contact-stuff form .fields.active, .quote-whole form .fields.active {
   display: flex;
   justify-content: normal;
   align-items: normal;
@@ -428,7 +439,7 @@ img {
   color: goldenrod;
   opacity: 0;
 }
-.contact-stuff form .fields > button.chat, .quote-whole form .fields > button.chat {
+.contact-stuff form .fields > button, .quote-whole form .fields > button, .contact-stuff form .fields input[type=submit], .quote-whole form .fields input[type=submit] {
   cursor: pointer;
   color: var(--bg);
   background: var(--text);
@@ -444,19 +455,60 @@ img {
   flex-flow: row;
   gap: 10px;
 }
-.contact-stuff form .fields > button.chat:hover, .quote-whole form .fields > button.chat:hover {
+.contact-stuff form .fields > button:hover, .quote-whole form .fields > button:hover, .contact-stuff form .fields input[type=submit]:hover, .quote-whole form .fields input[type=submit]:hover {
   color: var(--bg);
   background: var(--special-link);
   border-color: var(--special-link);
 }
-.contact-stuff form .fields > button.chat span, .quote-whole form .fields > button.chat span {
+.contact-stuff form .fields > button span, .quote-whole form .fields > button span, .contact-stuff form .fields input[type=submit] span, .quote-whole form .fields input[type=submit] span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.contact-stuff form .fields > button.chat, .quote-whole form .fields > button.chat {
+.contact-stuff form .fields > button, .quote-whole form .fields > button, .contact-stuff form .fields input[type=submit], .quote-whole form .fields input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+.contact-stuff form .fields p.phone-par, .quote-whole form .fields p.phone-par {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  flex-flow: column;
+  gap: 20px;
+}
+.contact-stuff form .fields p.phone-par button, .quote-whole form .fields p.phone-par button, .contact-stuff form .fields p.phone-par a, .quote-whole form .fields p.phone-par a {
+  width: 100%;
+  cursor: pointer;
+  color: var(--bg);
+  background: var(--text);
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.contact-stuff form .fields p.phone-par button:hover, .quote-whole form .fields p.phone-par button:hover, .contact-stuff form .fields p.phone-par a:hover, .quote-whole form .fields p.phone-par a:hover {
+  color: var(--bg);
+  background: var(--special-link);
+  border-color: var(--special-link);
+}
+.contact-stuff form .fields p.phone-par button span, .quote-whole form .fields p.phone-par button span, .contact-stuff form .fields p.phone-par a span, .quote-whole form .fields p.phone-par a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+.contact-stuff form .fields p.phone-par button, .quote-whole form .fields p.phone-par button, .contact-stuff form .fields p.phone-par a, .quote-whole form .fields p.phone-par a {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
@@ -474,6 +526,14 @@ img {
     max-width: 500px;
     padding: 30px;
   }
+}
+
+.quote-whole form .fields {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-flow: column;
+  gap: 25px;
 }
 
 header {
@@ -792,24 +852,60 @@ header #checkbox:checked ~ .overlay {
   position: relative;
 }
 .hero__img, .hero [class*=__img] {
+  position: relative;
   width: 100%;
   max-width: 100%;
   overflow-x: scroll;
+  height: 60dvh;
   display: flex;
   justify-content: normal;
   align-items: normal;
   flex-flow: row;
   gap: 0;
 }
+@media (max-width: 500px) {
+  .hero__img, .hero [class*=__img] {
+    min-height: 75dvh;
+  }
+}
+.hero__img::-webkit-scrollbar, .hero [class*=__img]::-webkit-scrollbar {
+  display: none;
+}
 .hero__img img, .hero [class*=__img] img {
   width: 100dvw;
   height: 100%;
-  height: 60dvh;
   object-fit: cover;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .hero__img img, .hero [class*=__img] img {
-    min-height: 70dvh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1.2s ease-in-out;
+  }
+  .hero__img img:nth-of-type(2n), .hero [class*=__img] img:nth-of-type(2n) {
+    transform: translateX(100%);
+  }
+  .hero__img img.active, .hero [class*=__img] img.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (min-width: 700px) {
+  .hero__img img, .hero [class*=__img] img {
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.1) translateX(40px);
+    transition: opacity 1.2s ease, transform 5s ease;
+  }
+  .hero__img img:nth-of-type(2n), .hero [class*=__img] img:nth-of-type(2n) {
+    transform: scale(1.1) translateX(-40px);
+  }
+  .hero__img img.active, .hero [class*=__img] img.active {
+    transform: scale(1) translateX(0);
+    opacity: 1;
   }
 }
 .hero__content {
@@ -1426,6 +1522,21 @@ header #checkbox:checked ~ .overlay {
   flex-flow: column;
   gap: 15px;
 }
+.services-hero__content svg {
+  width: 70px;
+  height: 70px;
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+  fill: var(--bg);
+}
+.services-hero__content svg path.shadow {
+  fill: var(--bg);
+}
+.services-hero__content svg rect, .services-hero__content svg path.divider {
+  stroke: var(--bg);
+  fill: transparent;
+}
 .services-hero__content h1 {
   font-size: 2rem;
   margin: 0;
@@ -1548,7 +1659,8 @@ header #checkbox:checked ~ .overlay {
 
 .gallery-hero {
   width: 100%;
-  height: 60dvh;
+  padding: 20px;
+  min-height: 60dvh;
   background: var(--text);
   color: var(--bg);
 }
@@ -1562,6 +1674,21 @@ header #checkbox:checked ~ .overlay {
   align-items: center;
   flex-flow: column;
   gap: 10px;
+}
+.gallery-hero__content svg {
+  width: 70px;
+  height: 70px;
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+  fill: var(--bg);
+}
+.gallery-hero__content svg path.shadow {
+  fill: var(--bg);
+}
+.gallery-hero__content svg rect, .gallery-hero__content svg path.divider {
+  stroke: var(--bg);
+  fill: transparent;
 }
 .gallery-hero__content h1 {
   font-size: clamp(2.5rem, 5dvw, 3rem);
@@ -1600,27 +1727,122 @@ header #checkbox:checked ~ .overlay {
 
 .gallery {
   display: flex;
-  justify-content: normal;
-  align-items: normal;
+  justify-content: center;
+  align-items: center;
   flex-flow: column;
   gap: 0;
 }
 .gallery .wrapper {
+  width: 100%;
   display: flex;
   justify-content: normal;
   align-items: normal;
   flex-flow: column;
   gap: 20px;
-  padding: 50px var(--side-p);
+  padding: 100px var(--side-p);
+  max-width: var(--max-w);
 }
-.gallery__tools {
+@media (min-width: 1100px) {
+  .gallery .wrapper {
+    padding: 100px 0;
+  }
+}
+.gallery__filter {
+  border-bottom: 1px solid var(--medium);
+  padding-bottom: 20px;
   display: flex;
   justify-content: normal;
   align-items: center;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.gallery__filter input[type=checkbox] {
+  display: none;
+}
+.gallery__filter input[type=checkbox]:checked + label {
+  background: var(--special-link);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.gallery__filter input[type=checkbox]:checked + label::after {
+  content: "×";
+}
+.gallery__filter label {
+  cursor: pointer;
+  color: var(--text-on-bg);
+  background: var(--white);
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-flow: row;
+  gap: 10px;
+}
+.gallery__filter label:hover {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.gallery__filter label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
+}
+.gallery__filter label {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 50px;
+}
+.gallery__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
   gap: 20px;
 }
-.gallery__tools label {
+.gallery__img figure {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 300px;
+  max-width: 400px;
+  overflow: hidden;
+}
+.gallery__img figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+.gallery__img figure img:hover {
+  transform: scale(1.2);
+}
+.gallery__img figure figcaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 2px solid var(--dark);
+  padding: 20px;
+  background: var(--light-white);
+  display: flex;
+  justify-content: normal;
+  align-items: start;
+  flex-flow: column;
+  gap: 10px;
+}
+.gallery__img figure figcaption h3 {
+  font-size: 1.5rem;
+}
+.gallery__img figure figcaption button, .gallery__img figure figcaption a {
   cursor: pointer;
   color: var(--text);
   background: transparent;
@@ -1636,62 +1858,100 @@ header #checkbox:checked ~ .overlay {
   flex-flow: row;
   gap: 10px;
 }
-.gallery__tools label:hover {
+.gallery__img figure figcaption button:hover, .gallery__img figure figcaption a:hover {
   color: var(--bg);
   background: var(--text);
   border-color: var(--text);
 }
-.gallery__tools label span {
+.gallery__img figure figcaption button span, .gallery__img figure figcaption a span {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.gallery__tools label.active {
-  background: var(--special-link);
-}
-.gallery__tools label.active [type=checkbox] {
-  appearance: none;
-  outline: none;
+.gallery__img a.more {
+  width: 100%;
+  max-width: 400px;
+  min-height: 100%;
+  border: 2px solid red;
+  cursor: pointer;
+  color: var(--text);
+  background: transparent;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
   display: flex;
-  justify-content: normal;
-  align-items: normal;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
+}
+.gallery__img a.more:hover {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.gallery__img a.more span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-flow: row;
   gap: 0;
 }
-.gallery__tools label.active [type=checkbox]::before {
-  content: "";
-  border: 1px solid;
-  width: 1rem;
-  height: 1rem;
+.gallery__img a.more button {
+  cursor: pointer;
+  color: var(--bg);
   background: var(--text);
-}
-.gallery__tools label.active [type=checkbox]:checked::before {
-  content: "";
-}
-.gallery__img {
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.3s;
   display: flex;
-  justify-content: normal;
-  align-items: normal;
-  flex-flow: row wrap;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 10px;
 }
-.gallery__img figure {
-  flex: 1;
-  border: 5px solid;
-  width: 100%;
-  max-width: 400px;
-  overflow: hidden;
+.gallery__img a.more button:hover {
+  color: var(--text);
+  background: var(--bg);
+  border-color: var(--bg);
 }
-.gallery__img figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.5s;
+.gallery__img a.more button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 0;
 }
-.gallery__img figure img:hover {
-  transform: scale(1.2);
+@media (min-width: 700px) {
+  .gallery__img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+  }
+  .gallery__img figure {
+    grid-row: span 4;
+    height: 100%;
+    min-width: 100%;
+  }
+  .gallery__img figure.long {
+    grid-row: span 6;
+  }
+  .gallery__img figure.short {
+    grid-row: span 3;
+  }
+  .gallery__img a.more {
+    min-width: 100%;
+    grid-row: span 1;
+  }
 }
 
 .choose {

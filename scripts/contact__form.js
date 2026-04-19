@@ -1,138 +1,24 @@
 import { sel } from './util/methods.js';
+import { workOnForm } from './contact__process.js';
 
-let name = sel('.contact #name');
-let message = sel('.contact #msg');
+let contact__type = sel('.contact .btns input[name=contact-type]', true);
+let forms = sel('.contact form > .fields',true);
+let form_type = null;
 
-let nameDiv = sel('.contact .field.name');
-let messageDiv = sel('.contact .field.msg');
-
-let error__name = sel('.error-msg',false, nameDiv);
-let error__message = sel('.error-msg', false, messageDiv)
-
-let submitBtn = sel('.chat') || sel('.call');
-
-let contact__type = sel('.contact [name=contact-type]');
-
-let nameState = false;
-let messageState = false;
-
-
-/* Now the normal event listeners */
-
-if (name) {
-  name.addEventListener('keyup', (e) => {
-    checkInput(e.target, 'name');
-  })
-}
-if (message) {
-  message.addEventListener('keyup', (e) =>{
-    checkInput(e.target, 'message');
-  })
-}
-
-function checkInput(input, type) {
-  // console.log('The input is a', type)
-  if (type === "name") {
-    if (!input.value || input.value.length < 3) {
-      errorMessage('A valid name please', type)
-      nameState = false;
-    } else {
-      errorMessage('remove', type)
-      nameState = true;
-    }
-  } else if (type === "message") {
-    if (!input.value || input.value.length < 3) {
-      errorMessage('A valid message please', type)
-      messageState = false;
-    } else {
-      errorMessage('remove', type)
-      messageState = true;
-    }
-  }
-}
-
-function errorMessage(message, type) {
-  if (type == "name") {
-    if (message === "remove") {
-      error__name.innerHTML = '';
-      nameDiv.classList.remove('error')
-      nameDiv.classList.add('valid')
-    } else {
-      error__name.innerHTML = message;
-      nameDiv.classList.add('error')
-      nameDiv.classList.remove('valid')
-    }
-  } else if (type == "message") {
-    if (message === "remove") {
-      error__message.innerHTML = '';
-      messageDiv.classList.remove('error')
-      messageDiv.classList.add('valid')
-    } else {
-      error__message.innerHTML = message;
-      messageDiv.classList.add('error')
-      messageDiv.classList.remove('valid')
-    }
-  }
-}
-
-
-submitBtn.addEventListener('click', (e)=> {
-  e.preventDefault();
-  if (!nameState) {
-    errorMessage('Please input a valid name!', 'name');
-  } 
-  if (!messageState) {
-    errorMessage('Your message should be at least a word!', 'message')
-  }
-  if (nameState && messageState) {
-    displaySuccessMessage();
-    sendMessage();
-  }
+contact__type.forEach(el => {
+  el.addEventListener('change', e => {
+    displayFormType(e.target.id.slice(4, e.target.id.length));
+  });
 })
-
-//AI help
-function displaySuccessMessage() {
-  // prevent duplicate messages
-  if (sel('.success-message')) return;
-
-  const wrapper = document.createElement('div');
-  wrapper.className = 'success-message';
-  wrapper.innerHTML = `
-    <div class="success-message__inner">
-      <div class="success-message__text">
-        <h3>
-          <i class="fa fa-check"></i>
-          <span>Message Sent</span>
-        </h3>
-        <p>Thanks — we'll get back to you shortly.</p>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(wrapper);
-
-  // trigger entrance animation on next frame
-  requestAnimationFrame(() => wrapper.classList.add('show'));
-  // auto-dismiss after a short delay: remove .show to animate out, then remove node
-  const AUTO_DISMISS_MS = 4000;
-  const EXIT_ANIM_MS = 480; // must be >= CSS transition time
-  setTimeout(() => {
-    wrapper.classList.remove('show');
-    setTimeout(() => {
-      if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
-    }, EXIT_ANIM_MS);
-  }, AUTO_DISMISS_MS);
+function displayFormType(form_type) {
+  if (forms) {
+    forms.forEach(form => form.classList.remove('active'));
+    forms.forEach(form => {
+      if (form.id == `${form_type}-form`) {
+        form.classList.add('active');
+        workOnForm(form_type);
+      }
+    });
+  }
 }
-
-function sendMessage() {
-  contact__type.forEach(type => {
-    if (type.value == "phone") {
-
-    } else if (type.value == "whatsapp") {
-      let text = `https://wa.me/2348142340182?text=Hello%20Ohons%20Tech.%20My%20name%20is%20${name.value}.%20I%20am%20contacting%20you%20from%20your%20website.%20${message.value}`;
-      // window.ur
-    } else if (type == "email") {
-      
-    }
-  })
-}
+displayFormType('whatsapp');
